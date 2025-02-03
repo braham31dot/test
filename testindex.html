@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Proficiency Exam</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #e0f7fa, #b2dfdb); /* Calming teal gradient */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #009688; /* Teal heading */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #424242;
+            margin-bottom: 10px;
+        }
+
+        .question {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .options {
+            margin-left: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            height: 80px;
+        }
+
+        button {
+            background-color: #4caf50; /* Green */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #43a047;
+        }
+
+        .thank-you {
+            text-align: center;
+            margin-top: 20px;
+            color: #4caf50;
+            font-size: 18px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>English Proficiency Exam</h1>
+
+        <form id="examForm" action="https://formspree.io/f/xgvoynqk" method="POST">
+
+            <h2>Section 1: Grammar and Vocabulary (20 points)</h2>
+
+            <div class="question">
+                <label for="q1">1. She _____ to the store every morning.</label>
+                <div class="options">
+                    <input type="radio" id="q1a" name="q1" value="goes" required><label for="q1a">a) goes</label><br>
+                    <input type="radio" id="q1b" name="q1" value="go"><label for="q1b">b) go</label><br>
+                    <input type="radio" id="q1c" name="q1" value="going"><label for="q1c">c) going</label><br>
+                    <input type="radio" id="q1d" name="q1" value="gone"><label for="q1d">d) gone</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q2">2. If I _____ more time, I would travel the world.</label>
+                <div class="options">
+                    <input type="radio" id="q2a" name="q2" value="have" required><label for="q2a">a) have</label><br>
+                    <input type="radio" id="q2b" name="q2" value="had"><label for="q2b">b) had</label><br>
+                    <input type="radio" id="q2c" name="q2" value="will have"><label for="q2c">c) will have</label><br>
+                    <input type="radio" id="q2d" name="q2" value="has"><label for="q2d">d) has</label>
+                </div>
+            </div>
+
+            <h2>Section 2: Reading Comprehension (20 points)</h2>
+<p>Maria loves to read books. Every evening, she sits by the fireplace with a cup of tea and a novel. She enjoys mystery stories the most. Last week, she finished a book about a detective who solved a difficult case. Maria finds reading relaxing and educational.</p>
+            <div class="question">
+                <label for="q6">6. What does Maria love to do?</label>
+                <div class="options">
+                    <input type="radio" id="q6a" name="q6" value="Cook" required><label for="q6a">a) Cook</label><br>
+                    <input type="radio" id="q6b" name="q6" value="Read books"><label for="q6b">b) Read books</label><br>
+                    <input type="radio" id="q6c" name="q6" value="Watch movies"><label for="q6c">c) Watch movies</label><br>
+                    <input type="radio" id="q6d" name="q6" value="Play sports"><label for="q6d">d) Play sports</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q7">7. Where does Maria sit while reading?</label>
+                <div class="options">
+                    <input type="radio" id="q7a" name="q7" value="In the park" required><label for="q7a">a) In the park</label><br>
+                    <input type="radio" id="q7b" name="q7" value="By the fireplace"><label for="q7b">b) By the fireplace</label><br>
+                    <input type="radio" id="q7c" name="q7" value="In the kitchen"><label for="q7c">c) In the kitchen</label><br>
+                    <input type="radio" id="q7d" name="q7" value="At school"><label for="q7d">d) At school</label>
+                </div>
+            </div>
+
+            <h2>Section 3: Writing (10 points)</h2>
+            <label for="writing">Write a short paragraph (2-3 sentences) about your favorite hobby. Include details about why you like it and how often you do it.</label>
+            <textarea id="writing" name="writing"></textarea>
+
+            <button type="submit">Submit Exam</button>
+
+            <div class="thank-you">Thank you for completing the exam!</div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('examForm');
+        const thankYouMessage = document.querySelector('.thank-you');
+
+        form.addEventListener('submit', function(event) {
+            // REMOVE or COMMENT OUT this line: event.preventDefault();
+            form.style.display = 'none';
+            thankYouMessage.style.display = 'block';
+
+            setTimeout(() => {
+                form.reset();
+                form.style.display = 'block';
+                thankYouMessage.style.display = 'none';
+            }, 5000);
+        });
+    </script>
+
+</body>
+</html>
